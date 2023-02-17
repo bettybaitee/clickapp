@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DefaultController!{% endblock %}
+
+{% block content %}
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex align-items-center justify-content-center">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+                <div class="col-xl-6 col-lg-8">
+                    <h1>Powerful Digital Solutions With Gp<span>.</span></h1>
+                    <h2>We are team of talented digital marketers</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                {% for label, messages in app.flashes(['success', 'warning']) %}
+                    {% for message in messages %}
+                        {% if label == 'success' %}
+                            <div class="alert alert-success alert-icon mb-0" role="alert">
+                                <div class="alert-icon-aside"><i data-feather="alert-triangle"></i></div>
+                                <div class="alert-icon-content">
+                                    <h5 class="alert-heading">Info</h5>
+                                    {{ message }}
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="alert alert-danger alert-icon mb-0" role="alert">
+                                <div class="alert-icon-aside"><i data-feather="alert-triangle"></i></div>
+                                <div class="alert-icon-content">
+                                    <h5 class="alert-heading">Perhatian</h5>
+                                    {{ message }}
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+            </div>
+            <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
+                <div class="col-xl-2 col-md-4">
+
+                        {{ include('rekod/_cemerlang.html.twig') }}
+
+                </div>
+                <div class="col-xl-2 col-md-4">
+
+                        {{ include('rekod/_baik.html.twig') }}
+
+                </div>
+                <div class="col-xl-2 col-md-4">
+                    {{ include('rekod/_teruk.html.twig') }}
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End Hero -->
+{% endblock %}

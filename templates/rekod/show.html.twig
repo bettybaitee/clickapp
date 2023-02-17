@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rekod{% endblock %}
+
+{% block body %}
+    <h1>Rekod</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ rekod.id }}</td>
+            </tr>
+            <tr>
+                <th>Nama</th>
+                <td>{{ rekod.nama }}</td>
+            </tr>
+            <tr>
+                <th>Created_at</th>
+                <td>{{ rekod.createdAt ? rekod.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_rekod_index') }}">back to list</a>
+
+    <a href="{{ path('app_rekod_edit', {'id': rekod.id}) }}">edit</a>
+
+    {{ include('rekod/_delete_form.html.twig') }}
+{% endblock %}
