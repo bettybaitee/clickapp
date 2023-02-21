@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Permohonan{% endblock %}
+
+{% block body %}
+    <h1>Permohonan</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ permohonan.id }}</td>
+            </tr>
+            <tr>
+                <th>Tajuk</th>
+                <td>{{ permohonan.tajuk }}</td>
+            </tr>
+            <tr>
+                <th>Sor</th>
+                <td>{{ permohonan.sor | raw }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_permohonan_index') }}">back to list</a>
+
+    <a href="{{ path('app_permohonan_edit', {'id': permohonan.id}) }}">edit</a>
+
+    {{ include('permohonan/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Rujukan{% endblock %}
+
+{% block body %}
+    <h1>Create new Rujukan</h1>
+
+    {{ include('rujukan/_form.html.twig') }}
+
+    <a href="{{ path('app_rujukan_index') }}">back to list</a>
+{% endblock %}

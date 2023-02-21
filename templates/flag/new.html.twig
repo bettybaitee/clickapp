@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Flag{% endblock %}
+
+{% block body %}
+    <h1>Create new Flag</h1>
+
+    {{ include('flag/_form.html.twig') }}
+
+    <a href="{{ path('app_flag_index') }}">back to list</a>
+{% endblock %}

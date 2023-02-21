@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Permohonan{% endblock %}
+
+{% block body %}
+    <h1>Edit Permohonan</h1>
+
+    {{ include('permohonan/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_permohonan_index') }}">back to list</a>
+
+    {{ include('permohonan/_delete_form.html.twig') }}
+{% endblock %}

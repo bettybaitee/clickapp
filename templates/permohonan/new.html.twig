@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Permohonan{% endblock %}
+
+{% block body %}
+    <h1>Create new Permohonan</h1>
+
+    {{ include('permohonan/_form.html.twig') }}
+
+    <a href="{{ path('app_permohonan_index') }}">back to list</a>
+{% endblock %}

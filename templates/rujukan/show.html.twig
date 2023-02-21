@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rujukan{% endblock %}
+
+{% block body %}
+    <h1>Rujukan</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ rujukan.id }}</td>
+            </tr>
+            <tr>
+                <th>Nama</th>
+                <td>{{ rujukan.nama }}</td>
+            </tr>
+            <tr>
+                <th>Template</th>
+                <td>{{ rujukan.template }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_rujukan_index') }}">back to list</a>
+
+    <a href="{{ path('app_rujukan_edit', {'id': rujukan.id}) }}">edit</a>
+
+    {{ include('rujukan/_delete_form.html.twig') }}
+{% endblock %}
